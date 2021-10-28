@@ -60,9 +60,10 @@ create_index_word_map(words)
 create_word_index_map(words_orig.copy())
 
 # test result maps
-for i in range(1, 2048):
+for i in range(1, 2049):
     if word_index_map[index_word_map[i]] != i:
         print("Test failed for index: " + str(i))
+        exit()
 
 # persist result maps
 with open(base_path + "/english-mixed_" + index_word_map[1] + "-" + index_word_map[2048] + ".txt", "w") as out_file:
